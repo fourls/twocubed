@@ -1,40 +1,36 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en-us">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <title>Two Cubed</title>
+    <title>Nox</title>
     <style>
-    /* a style sheet needs to be present for cursor hiding and custom cursors to work. */
-    
+    </style>
+    <style>
     body {
-      background-color: black;
+        margin: 0;
+        padding: 0;
+        background-color: black;
     }
-    #canvas {
-      position: absolute;
-      left: 50%;
-      top: 50%;
-      width: 1280px;
-      height: 800px;
-      margin-top: -400px;
-      margin-left: -640px;
+
+    body div#gameContainer {
+        width: 1280px;
+        height: 800px;
+        margin: 0;
+        padding: 0;
+        position: fixed;
+        left: 50%;
+        top: 50%;
+        margin-top: -400px !important;
+        margin-left: -640px !important;
     }
     </style>
+    <script src="Build/UnityLoader.js"></script>
+    <script>
+      var gameInstance = UnityLoader.instantiate("gameContainer", "Build/docs.json");
+    </script>
   </head>
   <body>
-    <canvas class="emscripten" id="canvas" oncontextmenu="event.preventDefault()" height="600px" width="960px"></canvas>
-    <script type='text/javascript'>
-  var Module = {
-    TOTAL_MEMORY: 268435456,
-    errorhandler: null,			// arguments: err, url, line. This function must return 'true' if the error is handled, otherwise 'false'
-    compatibilitycheck: null,
-    dataUrl: "Release/docs.data",
-    codeUrl: "Release/docs.js",
-    memUrl: "Release/docs.mem",
-    
-  };
-</script>
-<script src="Release/UnityLoader.js"></script>
-
+    <div id="gameContainer" style="width: 960px; height: 600px; margin: auto"></div>
   </body>
 </html>
